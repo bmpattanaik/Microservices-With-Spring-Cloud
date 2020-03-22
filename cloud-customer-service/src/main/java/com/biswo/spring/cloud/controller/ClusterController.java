@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.biswo.spring.cloud.model.Cluster;
+import com.biswo.spring.cloud.entity.Cluster;
 import com.biswo.spring.cloud.service.IClusterService;
 
 @RestController

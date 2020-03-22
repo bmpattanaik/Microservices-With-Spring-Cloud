@@ -1,4 +1,4 @@
-package com.biswo.spring.cloud.model;
+package com.biswo.spring.cloud.entity;
 
 public class Cluster {
 	

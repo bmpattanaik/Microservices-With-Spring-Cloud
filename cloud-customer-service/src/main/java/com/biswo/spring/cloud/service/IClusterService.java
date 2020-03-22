@@ -1,6 +1,6 @@
 package com.biswo.spring.cloud.service;
 
-import com.biswo.spring.cloud.model.Cluster;
+import com.biswo.spring.cloud.entity.Cluster;
 
 public interface IClusterService {
 

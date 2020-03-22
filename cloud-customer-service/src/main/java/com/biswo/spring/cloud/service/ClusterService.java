@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.biswo.spring.cloud.model.Cluster;
+import com.biswo.spring.cloud.entity.Cluster;
 
 @Service
 public class ClusterService implements IClusterService {
