@@ -5,13 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
+import com.biswo.spring.cloud.exception.CityIDExisting;
 
 @Table(name = "cities")
 @Entity
 public class Cities {
-	
-
 
 	public Cities() {
 		super();
@@ -19,9 +19,13 @@ public class Cities {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@CityIDExisting
 	private Long id;
 
+	@NotNull(message = "{NotNull.name}")
 	private String name;
+
+	private Long population;
 
 	public Long getId() {
 		return id;
@@ -39,10 +43,24 @@ public class Cities {
 		this.name = name;
 	}
 
-	public Cities(Long id, String name) {
+	public Cities(Long id, String name, Long population) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.population = population;
+	}
+
+	public Long getPopulation() {
+		return population;
+	}
+
+	public void setPopulation(Long population) {
+		this.population = population;
+	}
+
+	@Override
+	public String toString() {
+		return "Cities [id=" + id + ", name=" + name + ", population=" + population + "]";
 	}
 
 	@Override
@@ -51,6 +69,7 @@ public class Cities {
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((population == null) ? 0 : population.hashCode());
 		return result;
 	}
 
@@ -73,14 +92,14 @@ public class Cities {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (population == null) {
+			if (other.population != null)
+				return false;
+		} else if (!population.equals(other.population))
+			return false;
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Cities [id=" + id + ", name=" + name + "]";
-	}
 	
 	
-
 }
