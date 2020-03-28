@@ -28,7 +28,7 @@ import com.biswo.spring.cloud.exception.RecordNotFoundException;
 import com.biswo.spring.cloud.repository.CitiesRepository;
 
 @RestController
-@RequestMapping(path = "/cities")
+@RequestMapping(path = "/customer/cities")
 @Validated
 public class CitiesResource {
 
